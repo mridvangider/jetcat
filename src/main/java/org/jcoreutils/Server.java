@@ -1,15 +1,14 @@
 package org.jcoreutils;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
 
-public class Listener {
+public class Server {
 
     private final ServerSocket serverSocket;
 
-    public Listener(int port) throws Exception
+    public Server(int port) throws Exception
     {
         serverSocket = new ServerSocket(port);
     }
