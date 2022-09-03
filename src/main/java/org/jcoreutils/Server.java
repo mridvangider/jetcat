@@ -17,16 +17,9 @@ public class Server {
     {
         Socket client = serverSocket.accept();
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        Receiver receiver = new Receiver(client.getInputStream());
+        receiver.run();
 
-        String line;
-
-        while((line = br.readLine()) != null)
-        {
-            System.out.println(line+"\n");
-        }
-
-        br.close();
         client.close();
     }
 

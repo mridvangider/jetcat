@@ -12,11 +12,11 @@ public class Sender {
     public void run() {
         BufferedReader lineReader = new BufferedReader(new InputStreamReader(System.in));
 
-        String line = "";
+        String line;
         try {
             while (true) {
                 line = lineReader.readLine();
-                if (line.toLowerCase().equals("!exit")) {
+                if (line.equalsIgnoreCase("!exit")) {
                     break;
                 }
                 bufferedWriter.write(line);
